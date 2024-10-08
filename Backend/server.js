@@ -26,10 +26,23 @@ sequelize.authenticate()
   });
 
 // Apply CORS middleware before routes
+const allowedOrigins = [
+  'https://fitness-frontend-production-7999.up.railway.app',
+  'https://fitness-planner-frontend-production-2c25.up.railway.app'
+];
+
 app.use(cors({
-    origin: 'https://fitness-frontend-production-7999.up.railway.app', 
-    methods: 'GET,POST,PUT,DELETE', 
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true,
 }));
+
 
 // Body Parser Middleware
 app.use(bodyParser.json()); 
