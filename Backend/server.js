@@ -129,6 +129,7 @@ app.post('/api/exercise', async (req, res) => {
 // API Routes for workout creation
 app.post('/api/workouts', async (req, res) => {
   const { name, exercises, scheduled_time } = req.body;
+   const userId = req.userId;
 
   console.log('Data received from frontend:', req.body);
 
@@ -141,7 +142,7 @@ app.post('/api/workouts', async (req, res) => {
     // Create a new workout
     const newWorkout = await Workout.create({
       name,
-      created_by: 1, 
+      user_id: userId, 
       scheduled_time: new Date(scheduled_time)
     });
 
