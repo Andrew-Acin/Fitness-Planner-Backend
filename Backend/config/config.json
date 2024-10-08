@@ -1,23 +1,32 @@
 {
   "development": {
     "username": "postgres",
-    "password": "HEAC63",
-    "database": "fitness-planner",
-    "host": "postgresql://postgres:qaWZdSFYBpZPomEnZEcTDkvETgApBMMs@postgres.railway.internal:5432/railway",
+    "password": "qaWZdSFYBpZPomEnZEcTDkvETgApBMMs", 
+    "database": "railway",
+    "host": "postgres.railway.internal", 
+    "port": 5432,
     "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "HEAC63",
-    "database": "fitness-planner",
-    "host": "postgresql://postgres:qaWZdSFYBpZPomEnZEcTDkvETgApBMMs@postgres.railway.internal:5432/railway",
+    "password": "qaWZdSFYBpZPomEnZEcTDkvETgApBMMs",
+    "database": "railway",
+    "host": "postgres.railway.internal",
+    "port": 5432,
     "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "HEAC63",
-    "database": "fitness-planner",
-    "host": "postgresql://postgres:qaWZdSFYBpZPomEnZEcTDkvETgApBMMs@postgres.railway.internal:5432/railway",
-    "dialect": "postgres"
+    "password": "qaWZdSFYBpZPomEnZEcTDkvETgApBMMs",
+    "database": "railway",
+    "host": "postgres.railway.internal",
+    "port": 5432,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
