@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Exercise.init({
     id: {
-      type:DataTypes.STRING,
+      type:DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },

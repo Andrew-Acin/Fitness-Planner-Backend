@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'users', // Name of the referenced model (users)
-        key: 'id', // Key in the referenced model
+        key: 'user_id', // Key in the referenced model
       }
     }, 
     scheduled_time: {
